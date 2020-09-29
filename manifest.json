@@ -11,7 +11,7 @@
     "license": "permissive BSD 3-Clause License",
     "maintainer": {
         "name": "4G",
-        "email": "john.doe@free.fr",
+        "email": "john.doe@free.fr"
     },
     "requirements": {
         "yunohost": ">= 3.8.0"
