@@ -1,27 +1,24 @@
 {
-    "name": "YunoHost example app",
-    "id": "ynhexample",
+    "name": "TiddlyWiki",
+    "id": "tiddlywiki",
     "packaging_format": 1,
     "description": {
-        "en": "Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)",
-        "fr": "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+        "en": "Have you ever had the feeling that your head is not quite big enough to hold everything you need to remember. Welcome to TiddlyWiki, a unique non-linear notebook for capturing, organising and sharing complex information.",
+        "fr": "Avez-vous déjà eu le sentiment que votre tête n'est pas assez grande pour contenir tout ce dont vous devez vous souvenir? Bienvenue sur TiddlyWiki, un cahier non linéaire unique pour capturer, organiser et partager des informations complexes."
     },
-    "version": "1.0~ynh1",
+    "version": "0.1~ynh1",
     "url": "https://example.com",
-    "license": "free",
+    "license": "permissive BSD 3-Clause License",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com",
-        "url": "http://example.com"
+        "name": "4G",
+        "email": "john.doe@free.fr",
     },
     "requirements": {
-        "yunohost": ">= 3.5"
+        "yunohost": ">= 3.8.0"
     },
     "multi_instance": true,
     "services": [
-        "nginx",
-        "php7.0-fpm",
-        "mysql"
+        "nginx"
     ],
     "arguments": {
         "install" : [
@@ -29,29 +26,20 @@
                 "name": "domain",
                 "type": "domain",
                 "ask": {
-                    "en": "Choose a domain name for ynhexample",
-                    "fr": "Choisissez un nom de domaine pour ynhexample"
+                    "en": "Choose a domain name for TiddlyWiki",
+                    "fr": "Choisissez un nom de domaine pour TiddlyWiki"
                 },
-                "example": "example.com"
+                "example": "domain.org"
             },
             {
                 "name": "path",
                 "type": "path",
                 "ask": {
-                    "en": "Choose a path for ynhexample",
-                    "fr": "Choisissez un chemin pour ynhexample"
+                    "en": "Choose a path for tiddlywiki",
+                    "fr": "Choisissez un chemin pour tiddlywiki"
                 },
-                "example": "/example",
-                "default": "/example"
-            },
-            {
-                "name": "admin",
-                "type": "user",
-                "ask": {
-                    "en": "Choose an admin user",
-                    "fr": "Choisissez l'administrateur"
-                },
-                "example": "johndoe"
+                "example": "/tiddlywiki",
+                "default": "/tiddlywiki"
             },
             {
                 "name": "is_public",
@@ -62,28 +50,11 @@
                 },
                 "default": true
             },
-            {
-                "name": "language",
-                "type": "string",
-                "ask": {
-                    "en": "Choose the application language",
-                    "fr": "Choisissez la langue de l'application"
-                },
-                "choices": ["fr", "en"],
-                "default": "fr"
+            "help": {
+                    "en": "If enabled, Slingcode will be accessible by people who doesn’t have an account. This can be changed later via the webadmin.",
+                    "fr": "Si cette case est cochée, Slingcode sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
             },
-            {
-                "name": "password",
-                "type": "password",
-                "ask": {
-                    "en": "Set the administrator password",
-                    "fr": "Définissez le mot de passe administrateur"
-                },
-                "help": {
-                    "en": "Use the help field to add an information for the admin about this question.",
-                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
-                },
-                "example": "Choose a password"
+            "default": true
             }
         ]
     }
