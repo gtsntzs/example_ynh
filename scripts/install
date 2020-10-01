@@ -59,6 +59,16 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 mkdir -p $final_path
 cp -a ../sources/tiddlywiki.html $final_path/tiddlywiki.html
 
+
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Installing dependencies..."
+
+ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
+ynh_use_nodejs
+ynh_install_app_dependencies $pkg_dependencies
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
